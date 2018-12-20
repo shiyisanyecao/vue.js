@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>template 模板</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>template 模板</h1>
+  <hr>
+  <div id="app">
+    <h3>{{message}}</h3>
+    <template id="demo2">
+      <h4 style="color: red">你好，我是技术胖！</h4>
+    </template>
+  </div>
+  <script type="x-template" id="demo3">
+      <h4 style="color: green">你好，我是技术胖！</h4>
+  </script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello template!'
+      },
+      template: '#demo2'
+      // template: `<h4>你好，我是技术胖！</h4>`
+    })
+  </script>
+</body>
+</html>

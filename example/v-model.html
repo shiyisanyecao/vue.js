@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-model 实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>v-model 数据源双向绑定</h1>
+  <hr>
+  <div id="app">
+    <h3>原始文本信息：{{message}}</h3>
+    <p>v-model:<input type="text" v-model="message"></p>
+    <p>v-model.lazy:<input type="text" v-model.lazy="message"></p>
+    <p>v-model.number:<input type="text" v-model.number="message"></p>
+    <p>v-model.trim:<input type="text" v-model.trim="message"></p>
+    <p>文本域：<textarea v-model="message"></textarea></p>
+    <p>多选按钮绑定一个值：
+      <input type="checkbox" id="isTrue" v-model="ifTrue">
+      <label for="isTrue">{{ifTrue}}</label>
+    </p>
+    <p>多选按钮绑定数组：
+      <input type="checkbox" id="one" value="jspang" v-model="names">
+      <label for="one">jspang</label>
+      <input type="checkbox" id="two" value="panpan" v-model="names">
+      <label for="two">panpan</label>
+      <input type="checkbox" id="three" value="panda" v-model="names">
+      <label for="three">panda</label>
+      {{names}}
+    </p>
+    <p>单选按钮：
+      <input type="radio" id="forOne" value="男" v-model="sex">
+      <label for="forOne">男</label>
+      <input type="radio" id="forTwo" value="女" v-model="sex">
+      <label for="forTwo">女</label>
+      {{sex}}
+    </p>
+  </div>
+  <script>
+    var vue = new Vue({
+      el: '#app',
+      data: {
+        message: 'helloworld!',
+        ifTrue: true,
+        names: [],
+        sex: '女'
+      }
+    })
+  </script>
+</body>
+</html>

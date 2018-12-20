@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-if & v-else & v-show 实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>v-if 判断是否加载</h1>
+  <div>v-if和v-show的简单区别：v-if为false时，就不会加载，可以减轻服务器的压力，在需要时加载；v-show为false时，加载了但是display为none，故不显示，可以使客户端更加流畅</div>
+  <hr>
+  <div id="app">
+    <div v-show="isLogin">你好，技术胖！</div>
+    <!-- <div v-if="isLogin">你好，技术胖！</div>
+    <div v-else>请先登录！</div> -->
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        isLogin: true
+      }
+    })
+  </script>
+</body>
+</html>

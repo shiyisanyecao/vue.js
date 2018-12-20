@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-text & v-html实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>v-text 实例</h1>
+  <hr>
+  <div id="app">
+    <div v-text="message"></div>
+    <div v-html="messHtml"></div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello vue!',
+        messHtml: '<br><hr>hello v-html!'
+      }
+    })
+  </script>
+</body>
+</html>

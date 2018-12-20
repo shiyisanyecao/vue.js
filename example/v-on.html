@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on 实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>v-on 实例</h1>
+  <hr>
+  <div id="app">
+    <p>分数：{{score}}</p>
+    <div>
+      <button v-on:click="add">加分</button>
+      <button @click="plus">减分</button>
+    </div>
+    <p><input v-on:keyup.enter="onEnter" v-model="secScore"></p>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        score: 0,
+        secScore: 1
+      },
+      methods: {
+        add: function() {
+          this.score ++;
+        },
+        plus: function() {
+          this.score --;
+        },
+        onEnter: function() {
+          this.score += parseInt(this.secScore);
+        }
+      }
+    })
+  </script>
+</body>
+</html>
