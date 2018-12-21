@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.direction实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>Vue.direction实例</h1>
+  <hr>
+  <div id="app">
+    <div v-jspang="color">{{num}}</div>
+    <p><button @click="add">ADD</button></p>
+  </div>
+  <script>
+    Vue.directive('jspang', function(el,binding) {
+      // console.log(el);
+      // console.log(binding);
+      el.style="color:"+binding.value;
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+        num: 10,
+        color: 'green'
+      },
+      methods: {
+        add: function() {
+          this.num ++;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
