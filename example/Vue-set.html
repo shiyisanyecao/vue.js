@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.set实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>Vue.set 实例</h1>
+  <hr>
+  <div id="app">
+    <div>{{count}}</div>
+    <ul>
+      <li v-for="item in goods">{{item}}</li>
+    </ul>
+  </div>
+  <p><button onclick="add()">ADD</button></p>
+  <script>
+    function add() {
+      // Vue.set()示例
+      // Vue.set(outData, 'count', 2)
+      // Vue.set(outData.goods,1,'aa');
+    
+      
+      // outData.count ++;
+      // outData.goods[0] = 'aa';
+
+      // app.count ++;
+      // app.goods[0] = 'aa';
+    }
+    var outData = {
+      count: 1,
+      goodName: 'car',
+      goods: ['aaa','bbb','ccc']
+    }
+    var app = new Vue({
+      el: '#app',
+      data: outData
+    })
+  </script>
+</body>
+</html>

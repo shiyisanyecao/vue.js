@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.extend 实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>Vue.extend 实例</h1>
+  <hr>
+  <author></author>
+  <script>
+    var vueExtend = Vue.extend({
+      template: '<p><a :href="jspangURL">{{authorName}}</a></p>',
+      data: function() {
+        return {
+          authorName: 'jspang',
+          jspangURL: 'http://www.jspang.com'
+        }
+      }
+    })
+    new vueExtend().$mount('author');
+  </script>
+</body>
+</html>
