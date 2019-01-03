@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello world实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>hello world 实例</h1>
+  <hr>
+  <div id="app">
+    {{a}}
+    <p><button @click="add(2,$event)">+</button></p>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        a: 1
+      },
+      methods: {
+        add:function(num,event) {
+          if(num != '') {
+            this.a += num;
+          } else {
+            thia.a ++;
+          }
+          console.log(event);
+        }
+      }
+    })
+  </script>
+</body>
+</html>

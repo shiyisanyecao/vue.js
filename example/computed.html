@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello world实例</title>
+  <script src="https://cdn.bootcss.com/vue/2.5.20/vue.js"></script>
+</head>
+<body>
+  <h1>hello world 实例</h1>
+  <hr>
+  <div id="app">
+    <p>{{newPrice}}</p>
+    <ul>
+      <li v-for="(item,index) in reverseNews">{{item.title}}-{{item.date}}</li>
+    </ul>
+  </div>
+  <script>
+    var newsList = [
+      {title: '灌灌灌灌灌',date:'2017/3/24'},
+      {title: '哈哈哈哈哈',date:'2017/3/25'},
+      {title: '酷酷酷酷酷',date:'2017/3/26'},
+      {title: '急急急急急',date:'2017/3/27'},
+    ];
+    var app = new Vue({
+      el: '#app',
+      data: {
+        price: 100,
+        newsList: newsList
+      },
+      computed: {
+        newPrice: function() {
+          return this.price='￥' + this.price + '元';
+        },
+        reverseNews: function() {
+          return this.newsList.reverse()
+        }
+      }
+    })
+  </script>
+</body>
+</html>
